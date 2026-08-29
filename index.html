@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Festa95 — Clayton Luiz de Melo Liberato · 50 anos</title>
+<link rel="stylesheet" href="festa95.css">
+</head>
+<body>
+<div id="boot" role="status" aria-live="polite">
+  <div class="boot-logo">
+    <h1>Festa95</h1>
+    <p>Clayton Luiz de Melo Liberato</p>
+  </div>
+  <div class="boot-bar" aria-hidden="true"><i></i></div>
+  <div class="boot-hint">Iniciando o sistema operacional da vida…</div>
+</div>
+
+<div id="scrim"></div>
+
+<div id="desktop">
+  <div class="icons">
+    <button class="desk-icon" id="icon-pc" type="button">
+      <svg class="pic" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="4" y="4" width="24" height="16" fill="#808080" stroke="#000"/>
+        <rect x="6" y="6" width="20" height="12" fill="#000080"/>
+        <rect x="10" y="21" width="12" height="3" fill="#c0c0c0" stroke="#000"/>
+        <rect x="8" y="24" width="16" height="3" fill="#c0c0c0" stroke="#000"/>
+      </svg>
+      <span class="cap">Meu Computador</span>
+    </button>
+    <button class="desk-icon sel" id="icon-docs" type="button">
+      <svg class="pic" viewBox="0 0 32 32" aria-hidden="true">
+        <path fill="#ffd24d" stroke="#000" d="M4 10h8l2 3h14v13H4z"/>
+        <path fill="#ffe27a" stroke="#000" d="M4 10h8l2-3h6v3"/>
+        <rect x="9" y="16" width="10" height="8" fill="#fff" stroke="#000"/>
+        <path d="M11 18h6M11 20h6M11 22h4" stroke="#000080" stroke-width="1"/>
+      </svg>
+      <span class="cap">MEUS DOCUMENTOS</span>
+    </button>
+    <button class="desk-icon" id="icon-bin" type="button">
+      <svg class="pic" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="9" y="8" width="14" height="18" rx="1" fill="#c0c0c0" stroke="#000"/>
+        <rect x="7" y="6" width="18" height="4" fill="#a0a0a0" stroke="#000"/>
+        <path d="M12 12v10M16 12v10M20 12v10" stroke="#6080a0"/>
+      </svg>
+      <span class="cap">Lixeira</span>
+    </button>
+  </div>
+
+  <div class="window" id="win-explorer" role="dialog" aria-labelledby="ex-title">
+    <div class="titlebar" data-drag="win-explorer">
+      <svg class="t-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="#ffd24d" stroke="#000" d="M1 4h4l1 2h9v8H1z"/></svg>
+      <span class="t-text" id="ex-title">MEUS DOCUMENTOS</span>
+      <div class="t-btns">
+        <button class="t-btn" type="button" data-win="win-explorer" data-act="min" aria-label="Minimizar">_</button>
+        <button class="t-btn" type="button" data-win="win-explorer" data-act="max" aria-label="Maximizar">□</button>
+        <button class="t-btn" type="button" data-win="win-explorer" data-act="close" aria-label="Fechar">×</button>
+      </div>
+    </div>
+    <div class="menubar">
+      <button type="button">Arquivo</button>
+      <button type="button">Editar</button>
+      <button type="button">Exibir</button>
+      <button type="button" id="ex-help">Ajuda</button>
+    </div>
+    <div class="toolbar">
+      <button class="btn" type="button" id="ex-up">Uma pasta acima</button>
+    </div>
+    <div class="addr">
+      <label for="ex-path">Endereço</label>
+      <input id="ex-path" readonly value="C:\MEUS DOCUMENTOS">
+    </div>
+    <div class="client">
+      <div class="grid" id="ex-grid"></div>
+    </div>
+    <div class="statusbar"><span id="ex-status">0 objeto(s)</span></div>
+  </div>
+
+  <div class="window" id="win-note" role="dialog" aria-labelledby="note-title">
+    <div class="titlebar" data-drag="win-note">
+      <span class="t-text" id="note-title">LEIA-ME.TXT - Bloco de notas</span>
+      <div class="t-btns">
+        <button class="t-btn" type="button" data-win="win-note" data-act="min" aria-label="Minimizar">_</button>
+        <button class="t-btn" type="button" data-win="win-note" data-act="close" aria-label="Fechar">×</button>
+      </div>
+    </div>
+    <div class="menubar">
+      <button type="button">Arquivo</button>
+      <button type="button">Editar</button>
+      <button type="button">Procurar</button>
+      <button type="button">Ajuda</button>
+    </div>
+    <textarea id="note-text" readonly></textarea>
+  </div>
+
+  <div class="window modal" id="dlg-festa" role="alertdialog" aria-labelledby="festa-q" aria-modal="true">
+    <div class="titlebar" data-drag="dlg-festa">
+      <span class="t-text">50_ANOS.EXE</span>
+      <div class="t-btns">
+        <button class="t-btn" type="button" id="festa-x" aria-label="Fechar">×</button>
+      </div>
+    </div>
+    <div class="dlg-body">
+      <div class="q-icon" aria-hidden="true">?</div>
+      <p id="festa-q">Deseja iniciar a festa?</p>
+    </div>
+    <div class="dlg-actions">
+      <button class="btn default" type="button" id="btn-sim">SIM</button>
+      <button class="btn" type="button" id="btn-claro">CLARO</button>
+    </div>
+  </div>
+
+  <div class="window" id="win-festa" role="dialog" aria-labelledby="festa-hero">
+    <div class="titlebar" data-drag="win-festa">
+      <span class="t-text">50_ANOS.EXE — Clayton</span>
+      <div class="t-btns">
+        <button class="t-btn" type="button" data-win="win-festa" data-act="min" aria-label="Minimizar">_</button>
+        <button class="t-btn" type="button" data-win="win-festa" data-act="close" aria-label="Fechar">×</button>
+      </div>
+    </div>
+    <div class="menubar">
+      <button type="button" id="festa-sobre">Ajuda</button>
+    </div>
+    <div class="scroll">
+      <div class="hero" id="festa-hero">
+        <div class="ver">SISTEMA OPERACIONAL DA VIDA</div>
+        <h1>50</h1>
+        <h2>Clayton Luiz de Melo Liberato</h2>
+        <div class="sub">Instalação concluída com êxito · build 1976.09.06</div>
+      </div>
+      <table class="props">
+        <tr><th>Programa</th><td>Festa de 50 anos</td></tr>
+        <tr><th>Aniversariante</th><td>Clayton Luiz de Melo Liberato</td></tr>
+        <tr><th>Data</th><td>domingo, 06 de setembro de 2026</td></tr>
+        <tr><th>Versão</th><td>50.0 (estável há 50 anos)</td></tr>
+        <tr><th>Status</th><td>Você está convidado.</td></tr>
+      </table>
+      <p class="note">O local e o horário o anfitrião confirma em pessoa — este arquivo cuida da presença e da bebida.</p>
+
+      <form id="rsvp" novalidate>
+        <div class="field">
+          <label class="lbl" for="guest">Seu nome</label>
+          <input class="txt" id="guest" name="guest" maxlength="80" autocomplete="name" placeholder="Digite aqui">
+        </div>
+
+        <fieldset class="group">
+          <legend>O que você prefere beber? <span class="req">*</span></legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="bebida" value="Vinho tinto"> Vinho tinto</label>
+            <label class="check"><input type="checkbox" name="bebida" value="Cerveja"> Cerveja</label>
+            <label class="check"><input type="checkbox" name="bebida" value="Refrigerante"> Refrigerante</label>
+            <label class="check"><input type="checkbox" name="bebida" value="Refrigerante zero"> Refrigerante zero</label>
+            <label class="check">
+              <input type="checkbox" name="bebida" value="Other" id="bebida-other">
+              Other:
+              <input class="txt other" type="text" id="other-text" maxlength="80" aria-label="Outra bebida">
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button class="btn default" type="submit">OK</button>
+          <button class="btn" type="button" id="rsvp-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="window modal" id="dlg-msg" role="alertdialog" aria-labelledby="msg-text" aria-modal="true">
+    <div class="titlebar" data-drag="dlg-msg">
+      <span class="t-text" id="msg-title">Festa95</span>
+      <div class="t-btns">
+        <button class="t-btn" type="button" data-act="msg-close" aria-label="Fechar">×</button>
+      </div>
+    </div>
+    <div class="dlg-body">
+      <div class="x-icon" id="msg-ico" aria-hidden="true">i</div>
+      <p id="msg-text"></p>
+    </div>
+    <div class="dlg-actions">
+      <button class="btn default" type="button" data-act="msg-close">OK</button>
+    </div>
+  </div>
+
+  <div class="window modal" id="dlg-ok" role="alertdialog" aria-labelledby="ok-text" aria-modal="true">
+    <div class="titlebar" data-drag="dlg-ok">
+      <span class="t-text">50_ANOS.EXE</span>
+      <div class="t-btns">
+        <button class="t-btn" type="button" id="ok-x" aria-label="Fechar">×</button>
+      </div>
+    </div>
+    <div class="dlg-body">
+      <div class="i-icon" aria-hidden="true">i</div>
+      <p id="ok-text"></p>
+    </div>
+    <div class="dlg-actions">
+      <button class="btn default" type="button" id="ok-btn">OK</button>
+    </div>
+  </div>
+</div>
+
+<div id="start-menu" role="menu" aria-label="Menu Iniciar">
+  <div class="start-banner">Festa95</div>
+  <div class="start-list">
+    <button type="button" id="sm-docs" role="menuitem">
+      <svg class="pic" viewBox="0 0 24 24"><path fill="#ffd24d" stroke="#000" d="M2 7h6l2 3h12v10H2z"/></svg>
+      MEUS DOCUMENTOS
+    </button>
+    <button type="button" id="sm-exe" role="menuitem">
+      <svg class="pic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" fill="#c0c0c0" stroke="#000"/><rect x="3" y="4" width="18" height="4" fill="#000080"/></svg>
+      50_ANOS.EXE
+    </button>
+    <hr>
+    <button type="button" id="sm-run" role="menuitem">Executar…</button>
+    <button type="button" id="sm-off" role="menuitem">Desligar…</button>
+  </div>
+</div>
+
+<footer id="taskbar">
+  <button class="btn" id="start-btn" type="button" aria-haspopup="true" aria-expanded="false">
+    <svg class="win-flag" viewBox="0 0 16 16" aria-hidden="true">
+      <rect x="1" y="1" width="6" height="6" fill="#f44"/>
+      <rect x="8" y="1" width="7" height="6" fill="#8c4"/>
+      <rect x="1" y="8" width="6" height="7" fill="#48f"/>
+      <rect x="8" y="8" width="7" height="7" fill="#fc3"/>
+    </svg>
+    Iniciar
+  </button>
+  <div class="tasks" id="tasks"></div>
+  <div class="tray" id="tray" aria-label="Relógio">06/09/2026</div>
+</footer>
+
+<script src="festa95.js"></script>
+</body>
+</html>
